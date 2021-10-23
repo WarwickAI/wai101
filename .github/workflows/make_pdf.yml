@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+    - name: pdflatex main
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: wai101.tex
+        compiler: pdflatex
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: wai101.pdf
+        path: wai101.pdf

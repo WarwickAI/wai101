@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v2
-    - name: pdflatex main
+    - name: Build WAI101
       uses: dante-ev/latex-action@latest
       with:
         root_file: wai101.tex
